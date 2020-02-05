@@ -2,37 +2,42 @@ package Auto;
 
 public class Parking {
 
-     private int place;
+     private int place1;
+     private int place2;
+     private int place3;
      private int count;
-     private Autoclass [] arr;
+     private Autoclass [] [] []arr;
 
      Parking(){
-         place = 3;
+         place1 = 3;
+         place2 = 4;
+         place3 = 5;
          count = 0;
-         arr = new Autoclass[place];
+         arr = new Autoclass[place1][place2][place3];
      }
 
      public void addCar(Autoclass car){
          for (int i = 0; i < arr.length; i++) {
-             if (arr[i] == car){
+             if (arr[i][i][i] == car){
                  System.out.println("The car is parked");
              }
          }
-         if (count >= place){
+         if (count >= place1 || count >= place2 || count >= place3){
              System.out.println("The parking is full");
          }
          else {
              for (int i = 0; i < arr.length; i++){
-                 if (arr[i] == null){
+                 if (arr[i][i][i] == null){
                      count+=1;
-                     arr[i] = car;
+                     arr[i][i][i] = car;
                      System.out.println("The car is parked in " + i);
                      break;
                  }
              }
          }
      }
-     public void removeCar(int index){
+     public void removeCar(int index)
+     {
          for (int i = 0; i < arr.length; i++) {
              if (index >= 0 && index <= arr.length && arr[index] != null){
                  count-=1;
@@ -45,10 +50,10 @@ public class Parking {
          }
      }
 
-     public void getParkingInfo(){
+    public void getParkingInfo(){
          for (int i = 0; i < arr.length; i++){
              if (arr[i] != null){
-                 System.out.println(i + " : info of the car " + arr[i].getPetHamaranish());
+                 System.out.println(i + " : info of the car ");
              }
          }
      }
